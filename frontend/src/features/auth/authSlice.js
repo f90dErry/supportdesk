@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import authService from './authService'
-import { reset } from 'colors'
 
 const initialState = {
   user: null,
@@ -62,4 +61,5 @@ export const authSlice = createSlice({
   },
 })
 
+export const { reset } = authSlice.actions
 export default authSlice.reducer
