@@ -16,7 +16,7 @@ const registerUser = asyncHandler(async (req, res) => {
     throw new Error('Please include all fields')
   }
 
-  // Find if user already exist
+  // Find if user already exists
   const userExists = await User.findOne({ email })
 
   if (userExists) {
@@ -44,7 +44,8 @@ const registerUser = asyncHandler(async (req, res) => {
     })
   } else {
     res.status(400)
-    throw new error('Invalid user data')
+    console.error('Error creating user') // Log the error
+    throw new Error('Invalid user data')
   }
 })
 
