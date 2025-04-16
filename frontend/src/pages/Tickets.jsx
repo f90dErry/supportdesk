@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getTickets, reset } from '../features/tickets/ticketSlice'
 import Spinner from '../components/Spinner'
 import BackButton from '../components/BackButton'
+import TicketItem from '../components/TicketItem'
 
 function Tickets() {
   const { tickets, isLoading, isSuccess } = useSelector(
@@ -24,7 +25,7 @@ function Tickets() {
   }
 
   return (
-    <di>
+    <>
       <BackButton url='/' />
       <h1>Tickets</h1>
       <div className='tickets'>
@@ -38,7 +39,7 @@ function Tickets() {
           <TicketItem key={ticket._id} ticket={ticket} />
         ))}
       </div>
-    </di>
+    </>
   )
 }
 
