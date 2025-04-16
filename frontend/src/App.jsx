@@ -7,6 +7,7 @@ import Register from './pages/Register'
 import { ToastContainer } from 'react-toastify'
 import NewTicket from './pages/NewTicket'
 import Tickets from './pages/Tickets'
+import Ticket from './pages/Ticket'
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
             </Route>
             <Route element={<PrivateRoute />}>
               <Route path='/tickets' element={<Tickets />} />
+            </Route>
+            <Route element={<PrivateRoute />}>
+              <Route path='/ticket/:tickeId' element={<Ticket />} />
             </Route>
           </Routes>
         </div>
