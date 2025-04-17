@@ -19,12 +19,12 @@ app.use('/api/users', require('./routes/userRoutes'))
 app.use('/api/tickets', require('./routes/ticketRoutes'))
 
 // Server frontend
-if (process.env.Node_ENV === 'production') {
+if (process.env.NODE_ENV === 'production') {
   // Set build folder as static
   app.use(express.static(path.join(__dirname, '../frontend/dist')))
 
   app.get('*', (req, res) =>
-    res.sendFile(__dirname, '../', 'frontend', 'dist', 'index.html')
+    res.sendFile(path.resolve(__dirname, '../frontend/dist/index.html'))
   )
 } else {
   app.get('/', (req, res) => {
