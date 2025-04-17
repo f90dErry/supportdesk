@@ -49,14 +49,14 @@ const addNote = asyncHandler(async (req, res) => {
     throw new Error('User not authorized')
   }
 
-  const note = await Note.create({
+  const notes = await Note.create({
     text: req.body.text,
     isStaff: false,
     user: req.user.id,
     ticket: req.params.ticketId,
   })
 
-  res.status(200).json(note)
+  res.status(200).json(notes)
 })
 
 module.exports = {
