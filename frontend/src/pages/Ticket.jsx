@@ -84,7 +84,7 @@ function Ticket() {
       <header className='ticket-header'>
         <BackButton url='/tickets' />
         <h2>
-          Tickets: {ticket._id}
+          Ticket Id: {ticket._id}
           <span className={`status status-${ticket.status}`}>
             {ticket.status}
           </span>
